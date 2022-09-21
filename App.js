@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import Home from './screens/home';
+import SectionsList from './screens/sectionsList';
+import { useFonts } from 'expo-font';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  const[loaded]=useFonts({
+    'MontBold': require('./assets/fonts/Montserrat-Bold.ttf')
+  })
+  const [getIn, setGetIn]=useState(false)
+  console.log('soy getIN', getIn)
+  if(!loaded){
+    return null;
+  }
+  return(
+      getIn === false && <Home setGetIn={setGetIn}/> ||
+      getIn === true && <SectionsList setGetIn={setGetIn}/>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+
