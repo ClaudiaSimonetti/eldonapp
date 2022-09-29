@@ -96,11 +96,11 @@ function SectionsList({setGetIn}){
                 />
             </View>
             <View style={styles.button}>
-                <GenericButton
+                {/* <GenericButton
                     title='Volver al Home'
                     color= '#292929'
                     onPress={()=>backHome(false)}
-                />
+                /> */}
             </View>
         </View>
     )

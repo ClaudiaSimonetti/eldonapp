@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     }
 });
 
-function Home({setGetIn}){
+function Home({navigation}){
     function enter(){
         setGetIn(true)
     }
@@ -28,7 +28,7 @@ function Home({setGetIn}){
             <Text style={styles.title}>ELDON</Text>
             <GenericButton
                 title='INGRESAR'
-                onPress={()=> enter()}
+                onPress={()=> navigation.navigate("SectionsList")}
                 color='#292929'
             />
         </View>
