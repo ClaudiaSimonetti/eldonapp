@@ -13,16 +13,13 @@ const styles = StyleSheet.create({
     title:{
         color: colors.white,
         fontSize: 80,
-        fontFamily: 'MontBold',
+        fontFamily: 'Quicksand',
         alignItems: 'center',
         marginBottom: 100,
     }
 });
 
 function Home({navigation}){
-    function enter(){
-        setGetIn(true)
-    }
     return(
         <View style={styles.container}>
             <Text style={styles.title}>ELDON</Text>

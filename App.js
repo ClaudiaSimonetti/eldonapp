@@ -5,9 +5,7 @@ import { useFonts } from 'expo-font';
 import AppNavigator from './navigation';
 
 export default function App() {
-  const[loaded]=useFonts({
-    'MontBold': require('./assets/fonts/Montserrat-Bold.ttf')
-  })
+  const[ loaded ] = useFonts({'Quicksand': require('./assets/fonts/Quicksand-Regular.ttf')})
 
   if(!loaded){
     return null;

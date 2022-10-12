@@ -1,6 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Orders from '../screens/orders.js'
+import Orders from '../screens/orders/orders.js'
 
 const Stack = createNativeStackNavigator();
 
