@@ -3,7 +3,6 @@ import productsTypes from '../types/products.types';
 
 const { SELECTED_PRODUCT, FILTERED_PRODUCT }= productsTypes;
 
-
 const initialState = { 
     products: products,
     filteredProducts: [],

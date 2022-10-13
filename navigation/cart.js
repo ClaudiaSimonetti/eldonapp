@@ -4,7 +4,6 @@ import Cart from '../screens/cart/cart.js'
 
 const Stack = createNativeStackNavigator();
 
-
 const CartNavigator =()=>{
     return(
         <Stack.Navigator initialRouteName='Cart'>

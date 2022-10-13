@@ -6,7 +6,6 @@ import Products from '../screens/products/products.js';
 import Item from '../screens/item/item.js';
 import { colors } from '../constants/colors.js';
 
-
 const Stack = createNativeStackNavigator();
 
 const ShopNavigator =()=>{
@@ -20,11 +19,9 @@ const ShopNavigator =()=>{
                 headerTintColor: colors.gray,
                 headerTitleStyle: {
                     fontFamily: 'Quicksand',
-                    // fontWeight: 'bold',
-                    
                 },
                 headerTitleAlign: 'center',
-                // headerLeft:()=><Text>agregar otro arrow</Text>
+                // headerLeft:()=><Text>agregar otra arrow</Text>
             }}
             >
             <Stack.Screen 
@@ -34,7 +31,6 @@ const ShopNavigator =()=>{
                     title: "Inicio",
                     // headerShown: false,
                 }}
-            
             /> 
             <Stack.Screen 
                 name="SectionsList" 
@@ -42,8 +38,7 @@ const ShopNavigator =()=>{
                 options={{
                     title: "Categorias"
                 }}
-                
-                />
+            />
             <Stack.Screen 
                 name="Products" 
                 component={Products}
@@ -54,8 +49,7 @@ const ShopNavigator =()=>{
                     ({route})=>({title:route.params.name})
                     
                 }
-                
-                />
+            />
             <Stack.Screen 
                 name="Item" 
                 component={Item}
@@ -66,8 +60,7 @@ const ShopNavigator =()=>{
                     ({route})=>({title:route.params.name})
                     
                 }
-                
-                />
+            />
         </Stack.Navigator>
     )
 };
