@@ -38,7 +38,7 @@ function Tabs(){
                 options={{title:"Carrito",
                         tabBarIcon:({focused})=>(
                             <Ionicons
-                                name={focused ? "file-tray" : "file-tray-full-outline"}
+                                name={focused ? "cart" : "cart-outline"}
                                 size={22}
                             />)
                 }}
