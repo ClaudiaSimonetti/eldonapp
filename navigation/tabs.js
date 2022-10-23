@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import ShopNavigator from './shop';
 import OrderNavigator from './orders';
 import CartNavigator from './cart';
+import ProfileNavigator from './profile';
 import { Ionicons } from "@expo/vector-icons"
 
 const BottomTab = createBottomTabNavigator();
@@ -39,6 +40,17 @@ function Tabs(){
                         tabBarIcon:({focused})=>(
                             <Ionicons
                                 name={focused ? "cart" : "cart-outline"}
+                                size={22}
+                            />)
+                }}
+            />
+            <BottomTab.Screen
+                name="ProfileTab"
+                component={ProfileNavigator}
+                options={{title:"Pefil",
+                        tabBarIcon:({focused})=>(
+                            <Ionicons
+                                name={focused ? "person" : "person-outline"}
                                 size={22}
                             />)
                 }}
