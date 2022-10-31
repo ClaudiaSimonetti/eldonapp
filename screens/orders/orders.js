@@ -1,23 +1,47 @@
-import React from 'react-native';
-import { Text, View, StyleSheet } from 'react-native';
+import React, { useCallback } from "react";
+import { View , FlatList, Alert} from "react-native";
+import  OrderItem  from "../../components/orderItem/orderItem.js";
+import { useSelector, useDispatch } from "react-redux";
+import { styles } from "./styles";
+import { deleteOrder, getOrders } from "../../store/actions/orderAction.js";
+import { useFocusEffect } from "@react-navigation/native";
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "black",
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    text: {
-        color: "white",
-        fontSize: 20,
+
+
+function Orders({navigation}){
+    const dispatch = useDispatch();
+    const orders = useSelector(state => state.orders.list);
+
+    useFocusEffect(
+        useCallback(() => {
+            dispatch(getOrders());
+        }, [dispatch])
+    );
+
+    const onCancel = (id) => {
+        Alert.alert(
+            "¡Alerta! Usted está por eliminar una orden",
+            "Desea eliminar la orden? No podra luego recuperla",
+            [
+              {
+                text: "Cancelar",
+                onPress: () => null,
+               style: "cancel"
+              },
+              {},
+              { text: "Sí, deseo", onPress: () => dispatch(deleteOrder(id)) }
+            ]
+          );
     }
-})
-
-function Orders(){
-    return(
+    const renderItem = ({item}) => {return <OrderItem item={item} onCancel={onCancel} />}
+    return (
         <View style={styles.container}>
-            <Text style={styles.text}>AQUI VAN LAS ORDENES</Text>
+            
+            <FlatList 
+                data={orders}
+                renderItem={renderItem}
+                keyExtractor={item => item.id.toString()}
+            />
         </View>
     )
 }
