@@ -1,13 +1,34 @@
 import React from "react";
-import { Text } from 'react-native';
-import { useSelector } from 'react-redux'
+import { Text, View, Button } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux'
+import { addToCart } from "../../store/actions/cartAction";
 
-function Item(){
+function Item({navigation, route}){
 
-const productFiltered=useSelector((state)=> state.product.selected)
+    const dispatch = useDispatch();
 
+    const productFiltered = useSelector((state)=> state.product.selected)
+
+//     function addCartItem(){
+//     dispatch(addToCart(productFiltered))
+// }
+const addCartItem=()=>{
+    dispatch(addToCart(productFiltered))
+}
+
+const {name, description, price, quantity} = productFiltered || {};
     return(
-        <Text>{productFiltered.description}</Text>
+        <View>
+            <Text>{name}</Text>
+            <Text>{description}</Text>
+            <Text>{price}</Text>
+            <Text>{quantity}</Text>
+        
+        <Button
+            title="Add To cart"
+            onPress={addCartItem}
+        />
+        </View>
     )
 }
 

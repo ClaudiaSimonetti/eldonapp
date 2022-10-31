@@ -1,4 +1,4 @@
-const products = [
+const cart = [
     {
         id: 10,
         sectionId: 1,
@@ -6,7 +6,7 @@ const products = [
         img:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/e4d13c47cba14f05a216ad4300998262_9366/pantalon-deportivo-adidas-sprt-shark-tejido.jpg",
         description: "remera azul marino marca nike",
         price: 800,
-
+        quantity: 5
     },
     {
         id: 20,
@@ -15,17 +15,8 @@ const products = [
         img:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/e4d13c47cba14f05a216ad4300998262_9366/pantalon-deportivo-adidas-sprt-shark-tejido.jpg",
         description: "pantalon gris topper",
         price: 1000,
-  
-    },
-    {
-        id: 30,
-        sectionId: 2,
-        name: "patanlon topper",
-        img:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/e4d13c47cba14f05a216ad4300998262_9366/pantalon-deportivo-adidas-sprt-shark-tejido.jpg",
-        description: "pantalon verde topper",
-        price: 3000,
-
+        quantity: 7,
     },
 ]
 
-export default products;
+export default cart;
