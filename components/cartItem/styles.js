@@ -40,13 +40,13 @@ export const styles = StyleSheet.create({
     },
     quantity: {
         fontSize: 14,
-        fontFamily: "Lato-Regular",
+        fontFamily: "Quicksand",
         color: colors.black,
         marginBottom: 5,
     },
     price: {
         fontSize: 14,
         color: colors.black,
-        fontFamily: "Lato-Bold",
+        fontFamily: "Quicksand",
     },
 })
