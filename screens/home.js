@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
     },
     title:{
         color: colors.white,
-        fontSize: 80,
+        fontSize: 60,
         fontFamily: 'Quicksand',
-        alignItems: 'center',
+        // textAlign: 'center',
         marginBottom: 100,
     }
 });
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 function Home({navigation}){
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>ELDON</Text>
+            <Text style={styles.title}>Bienvenido a ELDON</Text>
             <GenericButton
                 title='INGRESAR'
                 onPress={()=> navigation.navigate("SectionsList")}
