@@ -5,19 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SelectSection } from '../../store/actions/sectionAction';
 
 function SectionsList({navigation}){
-
     const dispatch = useDispatch();
-
-    // accedo a los datos del store con el useSelector//
     const categoriesList = useSelector((state)=>state.section.sections)
-
     function onSelected(item){
         dispatch(SelectSection(item.id))
         navigation.navigate('Products', {name: item.name})
     }
-
     const renderItem = ({item}) => <CategoryItem item={item} onSelected={onSelected}/>
-    
     return(
         <FlatList
             data={categoriesList}
