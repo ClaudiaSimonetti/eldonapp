@@ -2,51 +2,38 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../constants/colors";
 
 export const styles = StyleSheet.create({
-    container: {
+    containerProduct: {
         flex: 1,
-        height: 120,
-        backgroundColor: colors.white,
+        flexDirection: 'row',
+        borderColor: colors.gray,
+        borderRadius: 10,
         borderWidth: 1,
-        borderRadius: 5,
-        borderColor: colors.black,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        shadowColor: colors.black,
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        margin: 10,
+        width: 380,
+        marginLeft: 20,
+        marginTop: 10,
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 5
     },
-    headerContainer: {},
-    title: {
+    title:{
+        fontFamily:'Quicksand',
+        fontSize: 25,
+        fontWeight: 'bold',
+    },
+    detail:{
+        flex: 1,
+        marginLeft: 20,
+    },
+    priceDetail:{
+        fontFamily: 'Quicksand',
         fontSize: 16,
-        fontFamily: "Quicksand",
-        color: colors.black,
-        marginBottom: 5,
     },
-    contentContainer: {
+    buttonDeleteContainer:{
         flex: 1,
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        alignItems: "center",
+        flexDirection:'row',
+        justifyContent: 'space-between',
     },
-    content: {
-        flex: 1,
-    },
-    quantity: {
-        fontSize: 14,
-        fontFamily: "Quicksand",
-        color: colors.black,
-        marginBottom: 5,
-    },
-    price: {
-        fontSize: 14,
-        color: colors.black,
-        fontFamily: "Quicksand",
-    },
+    icon:{
+        paddingRight: 20,
+    }
 })
