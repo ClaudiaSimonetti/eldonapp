@@ -1,22 +1,9 @@
 import React, { Alert, FlatList, TouchableOpacity } from 'react-native';
-import { Text, View, StyleSheet } from 'react-native';
-// import  cart  from '../../constants/data/cart.js'
+import { Text, View, } from 'react-native';
 import CartItem from '../../components/cartItem/cartItem.js';
 import { useSelector, useDispatch } from 'react-redux';
-import {confirmCart, confirmOrder, removeFromCart} from '../../store/actions/cartAction.js'
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        // backgroundColor: "black",
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    text: {
-        color: "white",
-        fontSize: 20,
-    }
-})
+import {confirmCart, removeFromCart} from '../../store/actions/cartAction.js'
+import { styles } from "./styles";
 
 function Cart({navigation}){
     const dispatch = useDispatch();
@@ -25,13 +12,12 @@ function Cart({navigation}){
 
     function onDelete(id){
         Alert.alert(
-            "Esta por eliminar un producto",
-            "Usted desea eliminar este producto?",
+            "Usted está a punto de eliminar un producto",
+            "Desea continuar?",
         [
             {
                 text: "Cancelar",
                 onPress: () => null,
-                // style: "cancel"
             },
             {},
             { 
@@ -43,8 +29,18 @@ function Cart({navigation}){
     }
     const renderItem = ({item})=>
         <CartItem item={item} onDelete={onDelete}/>
+
     function onConfirm(){
         dispatch(confirmCart(items, total))
+        Alert.alert(
+            'Compra realizada',
+            'Su orden fue generada con éxito',
+            [
+                { text: "Ir a mis ordenes", onPress: () => navigation.navigate("Orders")  },
+                {},
+                { text: "Ok" },
+            ]
+        )
     }
     return(
         <View style={styles.container}>
@@ -54,23 +50,16 @@ function Cart({navigation}){
                     renderItem={renderItem}
                     sytle={styles.container}
                     keyExtractor={item=>item.id.toString()}
-                
-                
                 />
             </View>
             <View style={styles.footer}>
-                <TouchableOpacity style={styles.buttonConfirm} onPress={onConfirm} disabled={items.length === 0}>
-                <Text style={styles.textButtonConfirm}>Finalizar compra</Text>
-                <View>
-                    <Text>Total:</Text>
-                    <Text>${total}</Text>
+                <View style={styles.total}>
+                    <Text style={styles.totalText}>Total:          ${total}</Text>
                 </View>
-
-
+                <TouchableOpacity style={styles.buttonConfirm} onPress={onConfirm} disabled={items.length === 0}>
+                    <Text style={styles.textButtonConfirm}>Finalizar compra</Text>
                 </TouchableOpacity>
-
             </View>
-            
         </View>
     )
 }

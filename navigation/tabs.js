@@ -15,7 +15,7 @@ function Tabs(){
             <BottomTab.Screen
                 name="ShopTab"
                 component={ShopNavigator}
-                options={{title:"Compra",
+                options={{title:"E-Shop",
                         tabBarIcon:({focused})=>(<Ionicons
                             name={focused ? "home" : "home-outline"}
                             size={22}

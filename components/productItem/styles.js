@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
         fontFamily:'Quicksand',
         fontSize: 25,
         fontWeight: 'bold',
+        marginLeft: 20,
     },
     detail:{
         flex: 1,

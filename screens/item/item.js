@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Alert } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart } from "../../store/actions/cartAction";
 import GenericButton from "../../components/button/button"
@@ -11,6 +11,13 @@ function Item({navigation, route}){
     const productFiltered = useSelector((state)=> state.product.selected)
     const addCartItem=()=>{
         dispatch(addToCart(productFiltered))
+        Alert.alert(
+            "Producto añadido",
+            "Usted ha agregado un"+" "+ `${name}`+" "+ "a su carrito",
+            [
+                { text: "OK" }
+            ]
+        );
     }
     const {img, name, color, size, description, price, quantity} = productFiltered || {};
     return(
@@ -28,7 +35,7 @@ function Item({navigation, route}){
             <View style={styles.button}>
                 <GenericButton
                     title="Añadir al carrito"
-                    onPress={addCartItem}
+                    onPress={()=>addCartItem(name)}
                     color={colors.black}
                 />
             </View>

@@ -1,6 +1,5 @@
 import {cartTypes} from "../types/cart.types";
-import {URL_API} from '../../constants/firebase/firebase.js'
-import { Alert } from "react-native";
+import {URL_API} from '../../constants/firebase/firebase.js';
 
 const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = cartTypes;
 
@@ -35,10 +34,6 @@ export const confirmCart = (items, total) => {
             })
             
             const result = await response.json();
-            Alert.alert(
-                'Compra realizada',
-                `Su codigo de orden es: ${result.name}`
-            )
 
             dispatch({
                 type: CONFIRM_ORDER,

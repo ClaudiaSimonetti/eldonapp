@@ -6,8 +6,6 @@ import { styles } from "./styles";
 import { deleteOrder, getOrders } from "../../store/actions/orderAction.js";
 import { useFocusEffect } from "@react-navigation/native";
 
-
-
 function Orders({navigation}){
     const dispatch = useDispatch();
     const orders = useSelector(state => state.orders.list);
@@ -21,22 +19,17 @@ function Orders({navigation}){
     const onCancel = (id) => {
         Alert.alert(
             "¡Alerta! Usted está por eliminar una orden",
-            "Desea eliminar la orden? No podra luego recuperla",
+            "Desea eliminar la orden? Luego no podrá recuperarla",
             [
-              {
-                text: "Cancelar",
-                onPress: () => null,
-               style: "cancel"
-              },
-              {},
-              { text: "Sí, deseo", onPress: () => dispatch(deleteOrder(id)) }
+                { text: "Cancelar", onPress: () => null },
+                {},
+                { text: "Sí, deseo", onPress: () => dispatch(deleteOrder(id)) }
             ]
-          );
+        );
     }
     const renderItem = ({item}) => {return <OrderItem item={item} onCancel={onCancel} />}
     return (
         <View style={styles.container}>
-            
             <FlatList 
                 data={orders}
                 renderItem={renderItem}

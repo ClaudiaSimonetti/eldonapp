@@ -5,10 +5,12 @@ export const styles = StyleSheet.create({
         fontFamily:'Quicksand',
         fontSize: 25,
         fontWeight: 'bold',
+        marginLeft: 10,
     },
     priceDetail:{
         fontFamily: 'Quicksand',
         fontSize: 16,
+        marginLeft: 10,
     },
     button:{
         width: '50%',
