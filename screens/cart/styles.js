@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
         
     },
     total:{
-        paddingLeft: 250,
+        paddingLeft: 240,
+        paddingTop: 20
     },
     totalText:{
         fontFamily: 'Quicksand',

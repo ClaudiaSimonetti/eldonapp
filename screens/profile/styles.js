@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     inputContainer:{
         width: '90%',
         height: '70%',
-        marginTop: 20,
+        marginTop: 5,
     },
     text:{
         fontFamily: 'Quicksand',
@@ -37,9 +37,9 @@ export const styles = StyleSheet.create({
         height: 40,
     },
     buttonSave:{
-        borderWidth: 2,
+        // borderWidth: 2,
         height: 40,
-        marginTop: 60,
+        marginTop: 50,
         alignItems: 'center',
         justifyContent: 'center',
         width: '30%',
@@ -51,5 +51,23 @@ export const styles = StyleSheet.create({
         fontFamily: 'Quicksand',
         fontWeight: 'bold',
         fontSize: 16,
+    },
+    textDataContainer:{
+        width: '90%',
+        height: '70%',
+        marginTop: 20,
+        paddingTop: 30,
+    },
+    textData:{
+        fontFamily: 'Quicksand',
+        fontSize: 16,
+        marginLeft: 15,
+        paddingBottom: 20,
+        paddingTop: 5,
+        fontWeight: 'bold',
+    },
+    textError:{
+        color: colors.red,
+        marginLeft: 12,
     }
 })
