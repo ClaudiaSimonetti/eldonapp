@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import GenericButton from '../../components/button';
+import GenericButton from '../../components/button/button';
 import { colors } from "../../constants/colors";
 import {styles} from "./styles";
 

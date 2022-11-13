@@ -36,7 +36,7 @@ function Cart({navigation}){
             'Compra realizada',
             'Su orden fue generada con éxito',
             [
-                { text: "Ir a mis ordenes", onPress: () => navigation.navigate("Orders")  },
+                { text: "Ir a mis ordenes", onPress:() => navigation.navigate("OrdersTab")},
                 {},
                 { text: "Ok" },
             ]

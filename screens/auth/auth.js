@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Image } from "react-native";
-import GenericButton from "../../components/button";
+import GenericButton from "../../components/button/button";
 import { colors } from "../../constants/colors";
 import { styles }  from "./styles";
 import { useState, useReducer } from 'react';

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, Button, Alert } from 'react-native';
+import { View, Image, Button, Alert } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { styles } from "./styles";
 
 function ImageSelector({onImage}){
 
@@ -28,32 +29,28 @@ function ImageSelector({onImage}){
     }
 
     return(
-    <View>
-    {!pickedUrl ?
-        <Image
-            style={{
-                alignSelf:'center',
-                height: 100,
-                width: 100,
-            }}
-            source={{uri: 'https://via.placeholder.com/100.jpg'}}
-        /> 
-        :
-        <Image
-            style={{
-                alignSelf:'center',
-                height: 100,
-                width: 100,
-            }}
-            source={{uri: pickedUrl}}
-    /> 
-}
-    <Button
-        title={!pickedUrl ? 'Agregar imagen': 'Editar imagen'}
-        onPress={()=>selectImage()}
-        color='#292929'
-    />
-    </View>
+        <View style={styles.container}>
+            <View >
+                {!pickedUrl ?
+                    <Image
+                        style={styles.img}
+                        source={{uri: 'https://via.placeholder.com/100.jpg'}}
+                    /> 
+                    :
+                    <Image
+                        style={styles.img}
+                        source={{uri: pickedUrl}}
+                    /> 
+                }
+            </View>
+            <View>
+                <Button
+                    title={!pickedUrl ? 'Agregar imagen': 'Editar imagen'}
+                    onPress={()=>selectImage()}
+                    color='#292929'
+                />
+            </View>
+        </View>
     )
 }
 
